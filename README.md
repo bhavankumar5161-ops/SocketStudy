@@ -1,4 +1,5 @@
-# Ex.No:1a  			Study of Socket Programming
+#### REGISTER NUMBER :212225240026
+##### DATE : 30.1.2026
 
 ## Aim: 
 To perform a study on Socket Programming
@@ -53,6 +54,51 @@ Socket programming finds applications in various domains, including web developm
 4.	Networked Games: Online multiplayer games rely on socket programming to facilitate communication between game clients and servers.
 5.	RPC mechanisms: which allow processes to execute code on a remote server, often use socket programming for communication.
 
+### Algorithm:
+server side program:
+1. start the code
+2. import the socket module
+3. create a socket using socket.socket()
+4. Display the messge "socket sucessfully created"
+5. Assign port number (12345)
+6. Bind the socket to the specified port using bind()
+7. Display message "socket is listening"
+8. run the program
+   import socket             
+# next create a socket object 
+s = socket.socket()         
+print ("Socket successfully created")
+port = 12345                
+s.bind(('', port))         
+print ("socket binded to %s" %(port)) 
+s.listen(5)     
+print ("socket is listening")            
+while True: 
+  c, addr = s.accept()     
+  print ('Got connection from', addr )
+  c.send('Thank you for connecting'.encode()) 
+  # Close the connection with the client 
+c.close()
 
-## Result:
+client side program:
+1. Import socket module 
+2.import socket.socket()
+3. Define the port on which you want to connect 
+4.connect to the server on local computer 
+5.receive data from the server and decoding to get the string.
+6. close the connection 
+s.close()
+### PROGRAM :
+import socket             
+s = socket.socket()         
+port = 12345                
+s.connect(('127.0.0.1', port)) 
+print (s.recv(1024).decode())
+s.close()
+
+###### Screenshot:
+[Uploading Screenshot (54).png…]()
+
+
+###Result:
 Thus the study of Socket Programming Completed Successfully
