@@ -64,8 +64,8 @@ server side program:
 6. Bind the socket to the specified port using bind()
 7. Display message "socket is listening"
 8. run the program
-   import socket             
-# next create a socket object 
+9. ###Program :
+import socket             
 s = socket.socket()         
 print ("Socket successfully created")
 port = 12345                
@@ -77,24 +77,33 @@ while True:
   c, addr = s.accept()     
   print ('Got connection from', addr )
   c.send('Thank you for connecting'.encode()) 
-  # Close the connection with the client 
 c.close()
 
 client side program:
-1. Import socket module 
+##Algorithm:
+1. Import socket module
+
 2.import socket.socket()
-3. Define the port on which you want to connect 
-4.connect to the server on local computer 
-5.receive data from the server and decoding to get the string.
-6. close the connection 
-s.close()
+
+3. Define the port on which you want to connect
+   
+4.connect to the server on local computer
+
+5.receive data from the server and decoding to get the string
+
+6. close the connection
+
+7. Run the program
+   
 ### PROGRAM :
+~~~
 import socket             
 s = socket.socket()         
 port = 12345                
 s.connect(('127.0.0.1', port)) 
 print (s.recv(1024).decode())
 s.close()
+~~~
 
 ###### Screenshot:
 [Uploading Screenshot (54).png…]()
