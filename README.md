@@ -65,20 +65,18 @@ server side program:
 7. Display message "socket is listening"
 8. run the program
 9. ###Program :
+## server
+~~~
+Server side 
 import socket             
-s = socket.socket()         
-print ("Socket successfully created")
-port = 12345                
-s.bind(('', port))         
-print ("socket binded to %s" %(port)) 
-s.listen(5)     
-print ("socket is listening")            
-while True: 
-  c, addr = s.accept()     
-  print ('Got connection from', addr )
-  c.send('Thank you for connecting'.encode()) 
-c.close()
 
+s = socket.socket()          
+port = 12345                
+
+s.connect(('127.0.0.1', port)) 
+
+print (s.recv(1024).decode())
+s.close()
 client side program:
 ##Algorithm:
 1. Import socket module
@@ -105,9 +103,10 @@ print (s.recv(1024).decode())
 s.close()
 ~~~
 
-###### Screenshot:
-[Uploading Screenshot (54).png…]()
+## sreenshot:
+~~~
+<img width="960" height="577" alt="Screenshot 2026-02-14 110546" src="https://github.com/user-attachments/assets/6f681211-3f03-4b0f-b0f8-e1596764c7f1" />
+~~~
 
-
-###Result:
+## Result:
 Thus the study of Socket Programming Completed Successfully
